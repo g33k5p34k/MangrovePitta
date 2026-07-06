@@ -1,0 +1,7 @@
+#NEXUS
+BEGIN TREES;
+	UTREE 1 = (((BR: 0.000690, BM: 0.000690)BRBM[&height_95%_HPD={0.00059000, 0.00078800}, theta=0.0001770]: 0.000028, MP: 0.000718)BRBMMP[&height_95%_HPD={0.00062300, 0.00081100}, theta=0.0051966]: 0.003651, HP: 0.004369)BRBMMPHP[&height_95%_HPD={0.00404900, 0.00468300}, theta=0.0076862];
+END;
+
+[Species tree with tau as branch lengths and theta as labels, for FigTree.
+In FigTree, choose 95%HPD for Node Bars and label for Node Labels]
