@@ -1,0 +1,21 @@
+#!/bin/bash
+## Run process_radtags to demultiplex Row A
+## David Tan
+## 1 Feb 2024
+############################################
+## Set up qsub flags
+#PBS -l walltime=48:00:00
+#PBS -l nodes=2:ppn=8
+#PBS -N pitta_demultiplex_rowa
+#PBS -M davidtan@unm.edu
+#PBS -m bae
+#PBS -S /bin/bash
+############################################
+
+module load miniconda3
+
+## start stacks2 environment
+
+source activate stacks_env
+
+process_radtags -1 /users/davidtan/wheeler-scratch/pitta/ddRAD/0_RawFiles/Pitta-ddRAD-RowA_S1_L001_R1_001.fastq.gz -2 /users/davidtan/wheeler-scratch/pitta/ddRAD/0_RawFiles/Pitta-ddRAD-RowA_S1_L001_R2_001.fastq.gz -i gzfastq -o /users/davidtan/wheeler-scratch/pitta/ddRAD/1_Process_Radtags -b /users/davidtan/wheeler-scratch/pitta/ddRAD/1_Process_Radtags/barcodes_rowA.txt -c -q -r -D --renz_1 ecoRI --renz_2 mspI
