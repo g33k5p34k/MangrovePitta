@@ -1,0 +1,44 @@
+gstacks v2.55, executed 2024-04-20 01:05:44 (zlib-1.2.13)
+gstacks -I /carc/scratch/projects/andersen2016005/pitta/ddRAD/3_Ref_Map -M /carc/scratch/projects/andersen2016005/pitta/ddRAD/3_Ref_Map/pitta_popmap.txt -O /carc/scratch/projects/andersen2016005/pitta/ddRAD/3_Ref_Map -t 8 -S .BWA.sorted.bam
+Locus/sample distributions will be written to '/carc/scratch/projects/andersen2016005/pitta/ddRAD/3_Ref_Map/gstacks.log.distribs'.
+
+Configuration for this run:
+  Input mode: reference-based
+  Population map: '/carc/scratch/projects/andersen2016005/pitta/ddRAD/3_Ref_Map/pitta_popmap.txt'
+  Input files: 50, e.g. '/carc/scratch/projects/andersen2016005/pitta/ddRAD/3_Ref_Map/BWP-N1435-SG.BWA.sorted.bam'
+  Output to: '/carc/scratch/projects/andersen2016005/pitta/ddRAD/3_Ref_Map/'
+  Model: marukilow (var_alpha: 0.01, gt_alpha: 0.05)
+
+Reading BAM headers...
+Processing all loci...
+WARNING: Some records (e.g. '68_1_1107_11356_13369') are missing a READ1/READ2 flag.
+1K...
+2K...
+5K...
+10K...
+20K...
+50K...
+100K...
+200K...
+500K...
+done.
+
+Read 925623652 BAM records:
+  kept 539050813 primary alignments (65.2%), of which 244526253 reverse reads
+  skipped 122878479 primary alignments with insufficient mapping qualities (14.9%)
+  skipped 130753121 excessively soft-clipped primary alignments (15.8%)
+  skipped 33708629 unmapped reads (4.1%)
+  skipped some suboptimal (secondary/supplementary) alignment records
+
+  Per-sample stats (details in 'gstacks.log.distribs'):
+    read 18512473.0 records/sample (9006059-33478695)
+    kept 53.7%-68.3% of these
+
+Built 510565 loci comprising 294524560 forward reads and 212049763 matching paired-end reads; mean insert length was 198.3 (sd: 27.7).
+
+Genotyped 510565 loci:
+  effective per-sample coverage: mean=118.1x, stdev=27.9x, min=70.2x, max=199.2x
+  mean number of sites per locus: 164.3
+  a consistent phasing was found for 264163 of out 327365 (80.7%) diploid loci needing phasing
+
+gstacks is done.
