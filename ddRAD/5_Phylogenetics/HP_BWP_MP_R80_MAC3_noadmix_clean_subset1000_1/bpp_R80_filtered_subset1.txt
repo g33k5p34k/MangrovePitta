@@ -1,0 +1,246 @@
+Detected CPU features: mmx sse sse2 sse3 ssse3 sse4.1 sse4.2 popcnt avx avx2
+bpp v4.7.0_linux_x86_64, 93GB RAM, 32 cores
+https://github.com/bpp/bpp
+
+Auto-selected SIMD ISA: AVX2
+
+
+Starting timer..
+
+Resuming from checkpoint file /carc/scratch/projects/andersen2016005/pitta/ddRAD/5_Phylogenetics/HP_BWP_MP_R80_MAC3_noadmix_clean_subset1000_1/HP_BWP_MP_R80_filtered_subset1000_1_out.txt.962.chk
+
+Control file     : /carc/scratch/projects/andersen2016005/pitta/ddRAD/5_Phylogenetics/HP_BWP_MP_R80_MAC3_noadmix_clean_subset1000_1/HP_BWP_MP_R80_MAC3_phylip_bpp_filtered.ctl
+Sequence file    : HP_BWP_MP_R80_MAC3__noadmix_clean_bpp_subset1000_1.phy
+Map file         : HP_MP_BWP_imap.txt
+MCMC sample file : HP_BWP_MP_R80_filtered_subset1000_1_mcmc.txt
+Output file      : HP_BWP_MP_R80_filtered_subset1000_1_out.txt
+
+Opt_debug_migration: 0
+[EXPERIMENTAL] - New extended IM rubberband algorithm
+Theta proposal: Mixed proposal (Sliding window (0.20) + Inv-G conditional Gibbs sampler (0.80))
+Linked thetas: none
+
+-*- Terms index -*-
+
+  Prgs: progress of MCMC run (negative progress means burnin)
+  Gage: gene-tree age proposal
+  Gspr: gene-tree SPR proposal
+   th1: species tree theta proposal  (sliding window)
+   thg: species tree theta proposal  (gibbs sampler)
+   tau: species tree tau proposal
+   mix: mixing proposal
+  mrte: migration rates proposal
+    pi: base frequencies proposal
+  qmat: instantaneous substitution rates proposal
+theta1: mean theta of node 1
+theta2: mean theta of node 2
+theta3: mean theta of node 3
+  tau1: mean tau of node 4
+  tau2: mean tau of node 5
+  tau3: mean tau of node 6
+    M1: mean migration rate BR -> BM
+    M2: mean migration rate BM -> BR
+log-PG: log-probability of gene trees (MSC)
+ log-L: mean log-L of observing data
+
+     |            Acceptance proportions            |
+Prgs | Gage Gspr  th1  thg  tau  mix mrte   pi qmat | theta1 theta2 theta3    tau1   tau2   tau3      M1     M2         log-PG          log-L
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.963.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.964.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.965.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.966.chk
+
+  96%  0.65 0.77 0.00 0.00 0.28 0.31 0.31 0.30 0.30   0.0001 0.0024 0.0005  0.0045 0.0007 0.0007  0.0169 0.1831   274168.39394  -335096.14958
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.967.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.968.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.969.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.970.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.971.chk
+
+  97%  0.65 0.77 0.00 0.01 0.28 0.31 0.31 0.30 0.30   0.0001 0.0024 0.0005  0.0045 0.0007 0.0007  0.0169 0.1831   273204.68167  -335096.19977
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.972.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.973.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.974.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.975.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.976.chk
+
+  97%  0.65 0.77 0.00 0.01 0.28 0.31 0.31 0.30 0.30   0.0001 0.0024 0.0005  0.0045 0.0007 0.0007  0.0169 0.1831   275953.44586  -335096.19556
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.977.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.978.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.979.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.980.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.981.chk
+
+  98%  0.65 0.77 0.00 0.02 0.28 0.31 0.31 0.30 0.30   0.0001 0.0024 0.0005  0.0045 0.0007 0.0007  0.0169 0.1831   275165.41858  -335096.19032
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.982.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.983.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.984.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.985.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.986.chk
+
+  98%  0.65 0.77 0.00 0.02 0.28 0.31 0.31 0.30 0.30   0.0001 0.0024 0.0005  0.0045 0.0007 0.0007  0.0169 0.1831   275781.24676  -335096.20446
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.987.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.988.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.989.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.990.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.991.chk
+
+  99%  0.65 0.77 0.00 0.02 0.28 0.31 0.31 0.30 0.30   0.0001 0.0024 0.0005  0.0045 0.0007 0.0007  0.0169 0.1831   275151.30872  -335096.19703
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.992.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.993.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.994.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.995.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.996.chk
+
+  99%  0.65 0.77 0.00 0.03 0.28 0.31 0.31 0.30 0.30   0.0001 0.0024 0.0005  0.0045 0.0007 0.0007  0.0169 0.1831   274363.99823  -335096.18488
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.997.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.998.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.999.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.1000.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.1001.chk
+
+ 100%  0.65 0.77 0.00 0.03 0.28 0.31 0.31 0.30 0.30   0.0001 0.0024 0.0005  0.0045 0.0007 0.0007  0.0169 0.1831   274863.23691  -335096.17932
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.1002.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.1003.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.1004.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.1005.chk
+
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.1006.chk
+
+ 100%  0.65 0.77 0.00 0.04 0.28 0.31 0.31 0.30 0.30   0.0001 0.0024 0.0005  0.0045 0.0007 0.0007  0.0169 0.1831   276818.59138  -335096.17608  29:26:29
+
+
+Writing checkpoint file HP_BWP_MP_R80_filtered_subset1000_1_out.txt.1007.chk
+
+
+29:26:30 spent in MCMC
+
+          theta_1BR	theta_2BM	theta_3MP	theta_4HP	theta_5BRBMMPHP	theta_6BRBMMP	theta_7BRBM	tau_5BRBMMPHP	tau_6BRBMMP	tau_7BRBM	M_BR->BM	M_BM->BR	lnL
+mean      0.000118  0.002413  0.000472  0.002107  0.007690  0.004692  0.000202  0.004457  0.000692  0.000667  0.016879  0.183100  -335096.214320
+median    0.000117  0.002411  0.000471  0.002106  0.007684  0.004688  0.000156  0.004456  0.000691  0.000667  0.014612  0.182626  -335095.944000
+S.D       0.000015  0.000106  0.000028  0.000095  0.000389  0.000232  0.000150  0.000165  0.000045  0.000051  0.011149  0.015365  89.679237
+min       0.000063  0.001892  0.000351  0.001712  0.005969  0.003678  0.000023  0.003681  0.000521  0.000464  0.000038  0.121554  -335526.426000
+max       0.000199  0.002977  0.000613  0.002582  0.009580  0.005943  0.001462  0.005257  0.000883  0.000871  0.107319  0.273997  -334665.490000
+2.5%      0.000091  0.002212  0.000419  0.001927  0.006944  0.004249  0.000054  0.004136  0.000605  0.000567  0.002198  0.154645  -335272.851000
+97.5%     0.000149  0.002627  0.000527  0.002298  0.008470  0.005158  0.000622  0.004782  0.000784  0.000767  0.044520  0.214859  -334921.398000
+2.5%HPD   0.000090  0.002205  0.000418  0.001920  0.006928  0.004237  0.000035  0.004136  0.000599  0.000567  0.000513  0.153685  -335271.804000
+97.5%HPD  0.000147  0.002619  0.000525  0.002290  0.008452  0.005145  0.000516  0.004781  0.000777  0.000766  0.038725  0.213613  -334920.421000
+ESS*      6234.051128  4554.252055  1538.844997  82408.092902  6249.214515  2377.735954  333.519720  2673.402773  902.766914  569.584831  1904.190866  13090.145836  37965.653075
+Eff*      0.006234  0.004554  0.001539  0.082408  0.006249  0.002378  0.000334  0.002673  0.000903  0.000570  0.001904  0.013090  0.037966
+
+FigTree tree is in FigTree.tre
