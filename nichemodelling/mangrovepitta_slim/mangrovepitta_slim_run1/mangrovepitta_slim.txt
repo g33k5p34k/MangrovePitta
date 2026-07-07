@@ -1,0 +1,19 @@
+// Initial random seed:
+3371996772238860796
+
+// RunInitializeCallbacks():
+initializeSLiMModelType(modelType = 'nonWF');
+initializeSLiMOptions(dimensionality = 'xy');
+initializeSex("A");
+initializeInteractionType(1, "xy", reciprocal=T, maxDistance=0.3);
+initializeInteractionType(2, "xy", reciprocal=T, maxDistance=0.5);
+initializeMutationRate(4.6e-09);
+initializeMutationType(1, 0.5, "f", 0);
+initializeGenomicElementType(1, m1, 1);
+initializeGenomicElement(g1, 0, 9999);
+initializeRecombinationRate(1e-09);
+
+// Starting run at tick <start>:
+1 
+
+slurmstepd: error: *** JOB 10225 ON wheeler002 CANCELLED AT 2024-12-02T21:29:35 DUE TO TIME LIMIT ***

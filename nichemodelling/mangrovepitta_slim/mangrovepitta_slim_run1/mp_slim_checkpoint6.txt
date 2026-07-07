@@ -1,0 +1,186 @@
+// mangrove pitta simulation with no genetics
+initialize() {
+	// define some global constants for parameters
+	
+	// define mutation rate
+	defineConstant("MU", 4.6e-9);
+	
+	// define number of mutating sites
+	defineConstant("L", 10000);
+	
+	// define recombination rate
+	defineConstant("R", 1e-9);
+	
+	//define population size
+	defineConstant("N", 10000);
+	
+	// define adult death rate
+	defineConstant("D", 0.263507866);
+
+	// set model type as non-Wright-Fisher
+	initializeSLiMModelType("nonWF");
+
+	// set up model as a spatial simulation
+	initializeSLiMOptions(dimensionality="xy");
+
+	//set up sexual model
+	initializeSex("A");
+
+	// carrying-capacity density per sqkm
+	defineConstant("K", 40); 
+
+	// SIGMA_S, the spatial competition width
+	defineConstant("S", 0.1); 
+
+	// spatial competition
+	initializeInteractionType(1, "xy", reciprocal=T, maxDistance=S * 3);
+	i1.setInteractionFunction("n", 1.0, S);
+	// spatial mate choice
+	initializeInteractionType(2, "xy", reciprocal=T, maxDistance=0.5);
+	i2.setConstraints("receiver", sex="F", minAge=1);
+	i2.setConstraints("exerter", sex="M", minAge=1);
+
+	// starting time interval for map choice (depends on BPP results)
+	defineConstant("startInt", 514);
+	
+	// checkpoint resumption value
+	defineConstant("chkpoint", 6);
+
+	//mutation rate 
+	initializeMutationRate(MU);
+	
+	// m1 mutation type: neutral
+	initializeMutationType("m1", 0.5, "f", 0.0);
+	m1.convertToSubstitution = T;
+	
+	// g1 genomic element type: uses m1 for all mutations
+	initializeGenomicElementType("g1", m1, 1.0);
+	
+	// uniform chromosome of length 100 kb with uniform recombination
+	initializeGenomicElement(g1, 0, L - 1);
+	initializeRecombinationRate(R);
+}
+
+1 early() {
+	//load population state file
+	sim.readFromPopulationFile("/carc/scratch/projects/andersen2016005/pitta/nichemodelling/mangrovepitta_slim/mangrovepitta_slim_run1/checkpoints/mangrovepitta_popstate_"+chkpoint+".txt");
+	chknext = asInteger(chkpoint-1);
+	
+	// create a population of 500 individuals
+	//sim.addSubpop("p1", N);
+	
+	// set boundaries of the simulation
+	p1.setSpatialBounds(c(0.0, 0.0, 4195.0, 4398.0));
+
+	mapImage = Image("/carc/scratch/projects/andersen2016005/pitta/nichemodelling/mangrove_predictions_slim/predicted_interval"+chknext+".png");
+	map = p1.defineSpatialMap("SEA", "xy", round(mapImage.floatK),
+		valueRange=c(0.0, 1.0), colors=c("#0000CC", "#55FF22"));
+		
+	//kill any individuals living on water
+	inds = p1.individuals;
+	sim.killIndividuals(inds[p1.spatialMapValue("SEA",inds.spatialPosition) == 0]);
+
+	// start near a specific map location
+	//for (ind in p1.individuals) {
+	//	do {
+	//		ind.x = runif(1, 1106, 1119);
+	//		ind.y = runif(1, 2584, 2752);
+	//	}
+	//	while(p1.spatialMapValue("SEA", ind.spatialPosition) == 0.0 | !p1.pointInBounds(ind.spatialPosition));
+	//}
+
+}
+
+1: late() {
+	//if at interval boundary, generate output map and change map
+	chkcycle = asInteger((514-chkpoint+1)*1000+999);
+	if(sim.cycle % 1000 == 0 & sim.cycle > chkcycle) {
+		intNum = asInteger(startInt - floor(sim.cycle/1000)+1);
+		sim.outputFull("/carc/scratch/projects/andersen2016005/pitta/nichemodelling/mangrovepitta_slim/mangrovepitta_slim_run1/checkpoints/mangrovepitta_popstate_"+intNum+".txt");
+		mprange = summarizeIndividuals(p1.individuals, c(4398, 4195), p1.spatialBounds, operation="1;", empty=0.0, perUnitArea=F);
+		Image(mprange).write("/carc/scratch/projects/andersen2016005/pitta/nichemodelling/mangrovepitta_slim/mangrovepitta_slim_run1/mangrovepitta_range/mprange_interval"+intNum+".png");
+		intNew = asInteger(intNum - 1);
+		mapImage = Image("/carc/scratch/projects/andersen2016005/pitta/nichemodelling/mangrove_predictions_slim/predicted_interval"+intNew+".png");
+		map = p1.defineSpatialMap("SEA", "xy", round(mapImage.floatK),
+			valueRange=c(0.0, 1.0), colors=c("#0000CC", "#55FF22"));
+			
+		//kill any individuals living on water
+		inds = p1.individuals;
+		sim.killIndividuals(inds[p1.spatialMapValue("SEA",inds.spatialPosition) == 0]);
+	}
+	
+}
+
+2: first() {
+	//set up map density following Chevy et al
+	//grid_dims = asInteger(ceil(2*p1.spatialBounds/S));
+	//print(grid_dims);
+	//raw = summarizeIndividuals(p1.individuals,asInteger(p1.spatialBounds[2:3]),p1.spatialBounds,operation="individuals.size();",perUnitArea=T);
+	//density_map = p1.defineSpatialMap("density","xy",raw);
+	//density_map.smooth(S*3,"n",S);
+	//defineGlobal("DENSITY",density_map);
+	
+	// look for mates
+	i2.evaluate(p1);
+}
+
+
+reproduction(NULL, "F") {
+	// choose our nearest neighbor as a mate, within the max distance
+	//mate_location = DENSITY.sampleNearbyPoint(individual.spatialPosition,0.9,"n",0.9);
+	//mate = i2.nearestNeighborsOfPoint(mate_location,p1,1);
+	mate = i2.nearestInteractingNeighbors(individual, 1);
+	if (mate.size()>0)
+		// offspring = subpop.addCrossed(individual, mate, count=rpois(1,1.5));
+		subpop.addCrossed(individual, mate, count=rpois(1,0.75));
+
+	// set offspring position
+	//do {
+	//	do pos = individual.spatialPosition + rnorm(2, 0, 8.89); //since mean natal dispersal dist = 6km, sigma of normal distribution = 6/0.675
+	//	while (!p1.pointInBounds(pos));
+	//} while (SEA.mapValue(pos) == 0.0);
+	
+	//offspring.setSpatialPosition(pos);
+}
+
+modifyChild() {
+	do {
+		do pos = parent1.spatialPosition + rnorm(2, 0, 8.89);
+		while (!p1.pointInBounds(pos));
+	} while (p1.spatialMapValue("SEA",pos) == 0.0);
+
+	child.setSpatialPosition(pos);
+	return T;
+}
+
+early() {
+	//set up map density following Chevy et al
+	//print(p1.spatialBounds[2:3]);
+	//grid_dims = asInteger(ceil(2*p1.spatialBounds/S));
+	//print(grid_dims[2:3]);
+	//raw = summarizeIndividuals(p1.individuals,asInteger(p1.spatialBounds[2:3]),p1.spatialBounds,operation="individuals.size();",perUnitArea=T);
+	//density_map = p1.defineSpatialMap("density","xy",raw);
+	//density_map.smooth(S*3,"n",S);
+	//defineGlobal("DENSITY",density_map);
+
+	//spatial competition provides density-dependent selection
+	i1.evaluate(p1);
+	inds = p1.individuals;
+	//density = p1.spatialMapValue(DENSITY,inds.spatialPosition);
+	//u = density/((1+0.75)*K);
+	//inds.fitnessScaling = 1/(1+0.75*u);
+	competition = i1.localPopulationDensity(inds);
+	inds.fitnessScaling = K / competition;
+
+	//perform age-related mortality with killIndividuals
+	inds = p1.individuals;
+	ages = inds.age;
+
+	inds1 = inds[ages < 9 & ages >= 1];
+	inds9 = inds[ages >= 9];
+	death1 = (runif(inds1.size()) < D);
+	sim.killIndividuals(c(inds1[death1],inds9));
+}
+
+// output samples of genomes periodically, all fixed mutations at end
+515000 late() {}
