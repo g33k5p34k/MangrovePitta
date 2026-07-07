@@ -1,0 +1,76 @@
+Simulation parameters for current simulations
+=============================================
+
+
+Deme sizes
+Deme 0	56892
+Deme 1	84422
+Deme 2	55904
+
+
+Sample sizes
+Deme 0	8
+Deme 1	46
+Deme 2	14
+
+Sample ages
+Deme 0	0
+Deme 1	0
+Deme 2	0
+
+Inbreeding coefficients
+Deme 0	0
+Deme 1	0
+Deme 2	0
+
+Growth rates
+Deme 0	0
+Deme 1	0
+Deme 2	0
+
+
+Migration matrix
+Note that migration rates have been pre-multiplied by factor TDemeCollection::CTTimeUnit (1e+06)
+ 0.0000000  0.1259333  0.0000000 
+15.0241061  0.0000000  0.0000000 
+ 0.0000000  0.0000000  0.0000000 
+
+
+Migration matrix
+Note that migration rates have been pre-multiplied by factor TDemeCollection::CTTimeUnit (1000000.0000000)
+ 0.0000000  0.0000000  0.0000000 
+ 0.0000000  0.0000000  0.0000000 
+ 0.0000000  0.0000000  0.0000000 
+
+
+Historical events
+Event 0
+
+#Time              : 128301
+#Source            : 0
+#Sink              : 1
+#Migrants          : 1.0000000
+#New relative size : 1856.0000000
+#New growth rate   : 0.0000000
+#New migr. matrix  : 1
+Event 1
+
+#Time              : 1201300
+#Source            : 2
+#Sink              : 1
+#Migrants          : 1.0000000
+#New relative size : 1.4091519
+#New growth rate   : 0.0000000
+#New migr. matrix  : 1
+
+
+Number of independent loci to simulate : 1
+With the same chromosomal structure
+
+Number of linkage blocks to simulate in structure 1: 1
+
+   1 partially linked FREQ data:
+      recombination and mutation rates                  : 0.0000000000   0.0000000046
+   Output expected MAF spectrum
+   Do not output expected DAF spectrum
+
