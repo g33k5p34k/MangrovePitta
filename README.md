@@ -11,4 +11,5 @@ The top-level directory contains three folders:
    - 5_Phylogenetics: Scripts for running IQ-TREE and BPP to reconstruct the phlylogenetic history of the Mangrove and Blue-winged Pitta complex
    - 8_Biogeography: Scripts for reconstructing the ancestral range of the Mangrove Pitta
    - 9_fastsimcoal: Scripts for running fastsimcoal2
-3. mtDNA: This folder contains scripts used to generate the time-calibrated BEAST tree based on 13 mitochondrial genes. 
+3. mtDNA: This folder contains scripts used to generate the time-calibrated BEAST tree based on 13 mitochondrial genes.
+4. nichemodelling: Contains the core scripts for the palaeoecological analyses reconstructing the historical ranges of Mangrove and Blue-winged Pittas, including SLiM scripts
