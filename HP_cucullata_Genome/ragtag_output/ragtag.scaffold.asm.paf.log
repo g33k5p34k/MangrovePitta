@@ -1,0 +1,12 @@
+[M::mm_idx_gen::43.523*0.74] collected minimizers
+[M::mm_idx_gen::53.139*0.79] sorted minimizers
+[M::main::53.139*0.79] loaded/built the index for 93 target sequence(s)
+[M::mm_mapopt_update::54.682*0.80] mid_occ = 50
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 93
+[M::mm_idx_stat::55.942*0.80] distinct minimizers: 101010393 (96.94% are singletons); average occurrences: 1.076; average spacing: 10.022; total length: 1089631598
+[M::worker_pipeline::98.351*0.84] mapped 534 sequences
+[M::worker_pipeline::136.388*0.83] mapped 3255 sequences
+[M::worker_pipeline::143.110*0.83] mapped 8357 sequences
+[M::main] Version: 2.22-r1101
+[M::main] CMD: minimap2 -x asm5 -t 1 /carc/scratch/projects/andersen2016005/pitta/genomes/LTManakin_Genome/GCF_009829145.1_bChiLan1.pri_genomic.fna /carc/scratch/projects/andersen2016005/pitta/genomes/HP_cucullata_Genome/M.Irestedt_pitta_sordida.scf.fasta
+[M::main] Real time: 143.170 sec; CPU: 119.182 sec; Peak RSS: 3.546 GB
